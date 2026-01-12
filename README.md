@@ -1,0 +1,6 @@
+# Pleiades cluster configuration
+
+## License
+
+This repository is licensed under GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later).
+See the [LICENSE](LICENSE) file for details.
