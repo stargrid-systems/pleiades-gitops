@@ -22,6 +22,16 @@ argocd login --port-forward --port-forward-namespace argocd --username=admin --p
 argocd admin dashboard -n argocd
 ```
 
+```bash
+argocd app create apps \
+    --port-forward --port-forward-namespace argocd \
+    --dest-namespace argocd \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/stargrid-systems/pleiades-gitops.git \
+    --path apps
+argocd app sync apps --port-forward --port-forward-namespace argocd
+```
+
 ## License
 
 This repository is licensed under GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later).

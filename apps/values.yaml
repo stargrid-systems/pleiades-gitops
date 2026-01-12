@@ -1,0 +1,24 @@
+config:
+  metadata:
+    namespace: argocd
+  spec:
+    destination:
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: https://github.com/stargrid-systems/pleiades-gitops
+      targetRevision: HEAD
+
+ops:
+  applications:
+    - name: argocd
+    - name: kubelet-serving-cert-approver
+    - name: hccm
+      destination:
+        namespace: kube-system
+      source:
+        chart: hcloud-cloud-controller-manager
+        repoURL: https://charts.hetzner.cloud
+        # TODO: renovate
+        targetRevision: 1.29.0
+        helm:
+          releaseName: hccm
