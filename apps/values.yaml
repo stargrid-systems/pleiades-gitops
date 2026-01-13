@@ -23,3 +23,5 @@ ops:
         helm:
           releaseName: hccm
     - name: cloudnative-pg
+      syncPolicy:
+        serverSideApply: true
