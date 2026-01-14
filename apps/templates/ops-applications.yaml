@@ -25,6 +25,10 @@ spec:
     {{- end }}
 {{- end }}
   syncPolicy:
+    {{- with (.syncPolicy).managedNamespaceMetadata }}
+    managedNamespaceMetadata:
+      {{- . | toYaml | nindent 6 }}
+    {{- end }}
     syncOptions:
       - CreateNamespace=true
       {{- if (.syncPolicy).serverSideApply }}
