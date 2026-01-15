@@ -3,5 +3,4 @@ kind: Kustomization
 
 namespace: cloudnative-pg
 resources:
-  # TODO: renovate
   - https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/refs/tags/v1.28.0/releases/cnpg-1.28.0.yaml
