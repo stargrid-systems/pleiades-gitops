@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: forgejo
+  namespace: {{ .Values.config.metadata.namespace | quote }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: ops
+  destination:
+    namespace: ops
+    server: {{ .Values.config.spec.destination.server | quote }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    chart: forgejo
+    repoURL: code.forgejo.org/forgejo-helm
+    targetRevision: 16.0.0
+    helm:
+      valuesObject:
+        httpRoute:
+          enabled: true
+          hostnames:
+          - forge.stargrid.systems
+        gitea:
+          config:
+            service:
+              DISABLE_REGISTRATION: true
