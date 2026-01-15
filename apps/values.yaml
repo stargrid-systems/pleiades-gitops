@@ -12,16 +12,6 @@ ops:
   applications:
     - name: argocd
     - name: kubelet-serving-cert-approver
-    - name: hccm
-      destination:
-        namespace: kube-system
-      source:
-        chart: hcloud-cloud-controller-manager
-        repoURL: https://charts.hetzner.cloud
-        # TODO: renovate
-        targetRevision: 1.29.0
-        helm:
-          releaseName: hccm
 
     - name: cloudnative-pg
       syncPolicy:
