@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hccm
+  name: hcloud-ccm
   namespace: {{ .Values.config.metadata.namespace | quote }}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
