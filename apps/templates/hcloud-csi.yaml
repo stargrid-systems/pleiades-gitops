@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hcloud-csi
+  namespace: {{ .Values.config.metadata.namespace | quote }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: kube-system
+    server: {{ .Values.config.spec.destination.server | quote }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    chart: hcloud-csi
+    repoURL: https://charts.hetzner.cloud
+    targetRevision: 2.18.3
