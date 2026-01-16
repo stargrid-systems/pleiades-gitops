@@ -3,4 +3,4 @@ kind: Kustomization
 
 namespace: kubelet-serving-cert-approver
 resources:
-  - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/refs/tags/v0.10.1/deploy/standalone-install.yaml
+  - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/refs/tags/v0.10.2/deploy/standalone-install.yaml
