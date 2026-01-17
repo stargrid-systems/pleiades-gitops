@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+  namespace: {{ .Values.config.metadata.namespace | quote }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: traefik
+    server: {{ .Values.config.spec.destination.server | quote }}
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    managedNamespaceMetadata:
+      labels:
+        # Only required so we can use hostPort 80 and 443.
+        # Remove once we switch to a load balancer.
+        pod-security.kubernetes.io/enforce: privileged
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    chart: traefik
+    repoURL: https://traefik.github.io/charts
+    targetRevision: 38.0.2
+    helm:
+      valuesObject:
+        api:
+          dashboard: false
+        service:
+          enabled: false
+        ports:
+          web:
+            hostPort: 80
+            redirections:
+              entryPoint:
+                to: websecure
+                scheme: https
+                permanent: true
+          websecure:
+            hostPort: 443
