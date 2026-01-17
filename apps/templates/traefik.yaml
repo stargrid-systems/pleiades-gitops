@@ -32,6 +32,9 @@ spec:
           isDefaultClass: true
         api:
           dashboard: false
+        providers:
+          kubernetesCRD:
+            enabled: false
         ports:
           web:
             hostPort: 80
@@ -43,4 +46,10 @@ spec:
           websecure:
             hostPort: 443
         service:
-          enabled: false # Disabled since we're using hostPort
+          enabled: true
+          type: ClusterIP
+          # This is hardcoded so Traefik can work with hostPort!
+          # Without this, ingresses won't end up with addresses
+          externalIPs:
+          - "91.98.27.40"
+          - "2a01:4f8:1c1f:a9e7::1"
