@@ -27,10 +27,28 @@ spec:
         persistence:
           size: 10Gi
         signing: {} # TODO: enable!
+        # TODO: set up oauth with nextcloud
+        # TODO: database
         gitea:
           config:
+            APP_NAME: "STARGRID Forgejo"
+            repository:
+              DEFAULT_PRIVATE: private
+              PREFERRED_LICENSES: AGPL-3.0-or-later
+            repository.pull-request:
+              DEFAULT_MERGE_STYLE: squash
+              DEFAULT_UPDATE_STYLE: rebase
+            cors:
+              ENABLED: true
+              ALLOW_DOMAIN: https://forge.stargrid.systems
             server:
               DOMAIN: forge.stargrid.systems
               ROOT_URL: https://forge.stargrid.systems/
+              # TODO: ssh using hostPort?
+              DISABLE_SSH: true
             service:
               DISABLE_REGISTRATION: true
+            quota:
+              ENABLED: true
+            quota.default:
+              TOTAL: 5G
