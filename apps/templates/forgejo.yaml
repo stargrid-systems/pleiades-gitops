@@ -24,6 +24,10 @@ spec:
           enabled: true
           hosts:
           - host: forge.stargrid.systems
+            paths:
+            - path: /
+              pathType: Prefix
+              port: http
         persistence:
           size: 10Gi
         signing: {} # TODO: enable!
