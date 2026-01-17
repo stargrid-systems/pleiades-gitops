@@ -27,10 +27,11 @@ spec:
     targetRevision: 38.0.2
     helm:
       valuesObject:
+        ingressClass:
+          enabled: true
+          isDefaultClass: true
         api:
           dashboard: false
-        service:
-          enabled: false
         ports:
           web:
             hostPort: 80
@@ -41,3 +42,5 @@ spec:
                 permanent: true
           websecure:
             hostPort: 443
+        service:
+          enabled: false # Disabled since we're using hostPort
