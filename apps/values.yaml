@@ -11,8 +11,10 @@ config:
 ops:
   applications:
     - name: argocd
-    - name: kubelet-serving-cert-approver
-
     - name: cloudnative-pg
       syncPolicy:
         serverSideApply: true
+    - name: external-dns-config
+      destination:
+        namespace: external-dns
+    - name: kubelet-serving-cert-approver

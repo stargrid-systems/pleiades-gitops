@@ -8,14 +8,10 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
+  project: default
   destination:
     namespace: {{ (.destination).namespace | default .name | quote }}
     server: {{ $config.spec.destination.server | quote }}
-  project: default
-{{- if .source }}
-  source:
-    {{- .source | toYaml | nindent 4 }}
-{{- else }}
   source:
     path: {{ .path | default (printf "ops/%s" .name) | quote }}
     repoURL: {{ $config.spec.source.repoURL }}
@@ -23,7 +19,6 @@ spec:
     {{- with .tool }}
     {{- . | toYaml | nindent 4 }}
     {{- end }}
-{{- end }}
   syncPolicy:
     {{- with (.syncPolicy).managedNamespaceMetadata }}
     managedNamespaceMetadata:
