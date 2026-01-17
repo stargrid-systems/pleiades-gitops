@@ -30,7 +30,6 @@ spec:
         gitea:
           config:
             server:
-              PROTOCOL: https
               DOMAIN: forge.stargrid.systems
               ROOT_URL: https://forge.stargrid.systems/
             service:
