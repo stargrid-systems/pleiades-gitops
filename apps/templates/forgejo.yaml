@@ -22,6 +22,12 @@ spec:
       valuesObject:
         ingress:
           enabled: true
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+          tls:
+          - hosts:
+            - forge.stargrid.systems
+            secretName: forge-tls
           hosts:
           - host: forge.stargrid.systems
             paths:
