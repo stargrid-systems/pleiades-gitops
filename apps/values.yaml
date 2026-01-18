@@ -11,6 +11,9 @@ config:
 ops:
   applications:
     - name: argocd
+    - name: cert-manager-config
+      destination:
+        namespace: cert-manager
     - name: cloudnative-pg
       syncPolicy:
         serverSideApply: true
