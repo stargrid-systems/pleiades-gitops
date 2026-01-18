@@ -35,6 +35,7 @@ spec:
               pathType: Prefix
               port: http
         persistence:
+          claimName: forgejo-shared-storage
           size: 10Gi
         signing:
           enabled: true
