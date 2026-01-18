@@ -47,8 +47,7 @@ spec:
           - secret:
               secretName: forgejo-mailer-config
           admin:
-            existingSecret: forgejo-admin-user
-            email: devops+forgejo@stargrid.systems
+            username: "" # Disable managed admin user
           config:
             APP_NAME: "STARGRID Forgejo"
             repository:
@@ -89,3 +88,7 @@ spec:
             customTokenUrl: https://nextcloud.stargrid.systems/apps/oauth2/api/v1/token
             customProfileUrl: https://nextcloud.stargrid.systems/ocs/v2.php/cloud/user?format=json
             skipLocal-2fa: true
+            # TODO: blocked on <https://codeberg.org/forgejo/forgejo/issues/1756>
+            # groupClaimName: ocs.data.groups
+            # adminGroup: "Forgejo Admin"
+            # groupTeamMapRemoval: true
