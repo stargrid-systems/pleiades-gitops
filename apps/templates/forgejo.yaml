@@ -43,6 +43,9 @@ spec:
         # TODO: set up oauth with authentik
         # TODO: database
         gitea:
+          additionalConfigSources:
+          - secret:
+              secretName: forgejo-mailer-config
           admin:
             existingSecret: forgejo-admin-user
             email: devops+forgejo@stargrid.systems

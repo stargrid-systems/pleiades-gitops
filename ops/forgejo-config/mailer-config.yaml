@@ -1,0 +1,13 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: forgejo-mailer-config
+  namespace: ops
+spec:
+  encryptedData:
+    mailer: AgBEHDeP/wBtYMbcj8QKsIC68k/TqMjfKaSl5GXP2N4yhp7ozAe0HBUcXIk8N8Io6fKB+0szRu5KTiS3C4fhxisvmUeKIKv3wiHmYIyuQmFZKQB/vNZ4PEdxbMlNkRrW48NhFWQjtg7jZQ5ceOXP5QVLRWsB1LTZqTPAHBfTKnHL67yK185AvfThDTXo3Z5jKjv0S4e0CSdXPDR2EV4XTUOZO7JbIdtVsSrZGlkEsdIT00WtjmXRanCtcU8L1V4wFwjcs3LTpznUEc4UbkBzPuCBWh3E6e3c41wYnVX+GP7Kkhw+CdkF/Zffi6ojCP1OM7gvTAE1kC88eeDlciQG9Q4EPlUsLLlPD8FnVkBAxYCuzfqrSIaue6NmcPyUyC61QYn8AlHcyO0cHDjZbxByBhucUDQvfXw7MpDbwdp3vVhfUd3yQeA2dlYy3vkRIJK227vMVtu+LNqMQFJwgwtTs1n6EWeauBuwALszBaxu/v7+XNb9dyizO6ihFgd3XguCtSu1PjwOEtd/y1qKkPl2vvbx6wTs5bOJa4oig9dCwp8pRd6zy8QE4rRIX2q1LM7FKaAC/prjF2LnAujQ17OebYTapc7Ia+YDNhz4Ql5PXKJQzSLxCzDLCaMTdIZ2Z3qM50KiemrmAHgr7RYYTP/xyB/d9fSCkZGTRqrDY2qxuPmYX3jE/izQC3we2mc26lIWliJxpjo9sclCi2CZ/uOgDx0qsihUOggwu+N1LsdsLjn9Ko89OdpyGb86Ltd1zmKFjOvaUSrvtIJFDu1ZUeknbe2qH4+Ex8HHazEhVd7rZZUdD+NSEgl5+3gFCZjPPWJqPk+mEO/2lvoq8ZEoBVbJ+7FlENCyMSwVJAGO0ANsKwQCQGVdvccun6l+AbMVfv6Xa8rN6LJCwPA8V/k3/I8rD8lSewhT15O5mUqS3b2WIPHISCorA+kleJyuPTI=
+  template:
+    metadata:
+      name: forgejo-mailer-config
+      namespace: ops
