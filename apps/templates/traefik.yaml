@@ -52,9 +52,3 @@ spec:
           # Without this, ingresses won't end up with addresses
           externalIPs:
           - "91.98.27.40"
-          - "2a01:4f8:1c1f:a9e7::1"
-          # TODO: not sure if this actually does anything since we're using hostPort??
-          ipFamilyPolicy: PreferDualStack
-          ipFamilies:
-          - IPv4
-          - IPv6
