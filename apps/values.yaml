@@ -20,4 +20,7 @@ ops:
     - name: external-dns-config
       destination:
         namespace: external-dns
+    - name: forgejo-config
+      destination:
+        namespace: ops
     - name: kubelet-serving-cert-approver

@@ -36,10 +36,15 @@ spec:
               port: http
         persistence:
           size: 10Gi
-        signing: {} # TODO: enable!
-        # TODO: set up oauth with nextcloud
+        signing:
+          enabled: true
+          existingSecret: forgejo-gpg-key
+        # TODO: set up oauth with authentik
         # TODO: database
         gitea:
+          admin:
+            existingSecret: forgejo-admin-user
+            email: devops+forgejo@stargrid.systems
           config:
             APP_NAME: "STARGRID Forgejo"
             repository:
