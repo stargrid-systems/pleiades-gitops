@@ -6,3 +6,4 @@ resources:
   - admin-user.yaml
   - gpg-key.yaml
   - mailer-config.yaml
+  - oauth-nextcloud.yaml

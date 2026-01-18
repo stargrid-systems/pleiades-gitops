@@ -65,9 +65,27 @@ spec:
               ROOT_URL: https://forge.stargrid.systems/
               # TODO: ssh using hostPort?
               DISABLE_SSH: true
+            openid:
+              ENABLE_OPENID_SIGNUP: true
+            oauth2_client:
+              ENABLE_AUTO_REGISTRATION: true
+              USERNAME: userid
+              UPDATE_AVATAR: true
             service:
               DISABLE_REGISTRATION: true
+              ENABLE_INTERNAL_SIGNIN: false
+            session:
+              COOKIE_NAME: stargrid_forgejo
             quota:
               ENABLED: true
             quota.default:
               TOTAL: 5G
+          oauth:
+          - name: "Nextcloud"
+            provider: "nextcloud"
+            existingSecret: forgejo-oauth-nextcloud
+            useCustomUrls: true
+            customAuthUrl: https://nextcloud.stargrid.systems/apps/oauth2/authorize
+            customTokenUrl: https://nextcloud.stargrid.systems/apps/oauth2/api/v1/token
+            customProfileUrl: https://nextcloud.stargrid.systems/ocs/v2.php/cloud/user?format=json
+            skipLocal-2fa: true
