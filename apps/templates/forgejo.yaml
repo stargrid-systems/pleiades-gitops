@@ -50,6 +50,7 @@ spec:
             username: "" # Disable managed admin user
           config:
             APP_NAME: "STARGRID Forgejo"
+            APP_SLOGAN: "STARGRID Systems"
             repository:
               DEFAULT_PRIVATE: private
               PREFERRED_LICENSES: AGPL-3.0-or-later
@@ -75,6 +76,7 @@ spec:
               ENABLE_INTERNAL_SIGNIN: false
             session:
               COOKIE_NAME: stargrid_forgejo
+              DOMAIN: forge.stargrid.systems
             quota:
               ENABLED: true
             quota.default:
