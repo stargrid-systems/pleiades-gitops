@@ -24,7 +24,7 @@ spec:
   source:
     chart: traefik
     repoURL: https://traefik.github.io/charts
-    targetRevision: 38.0.2
+    targetRevision: 39.0.0
     helm:
       # We don't need traefik's CRDs currently and there are A LOT of them.
       # There's currently no option to disable them selectively.
