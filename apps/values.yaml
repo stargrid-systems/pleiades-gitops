@@ -11,6 +11,8 @@ config:
 ops:
   applications:
     - name: argocd
+      syncPolicy:
+        serverSideApply: true
     - name: cert-manager-config
       destination:
         namespace: cert-manager
