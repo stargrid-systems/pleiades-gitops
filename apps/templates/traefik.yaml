@@ -51,8 +51,9 @@ spec:
             hostPort: 443
         service:
           enabled: true
-          type: ClusterIP
-          # This is hardcoded so Traefik can work with hostPort!
-          # Without this, ingresses won't end up with addresses
-          externalIPs:
-          - "91.98.27.40"
+          spec:
+            type: ClusterIP
+            # This is hardcoded so Traefik can work with hostPort!
+            # Without this, ingresses won't end up with addresses
+            externalIPs:
+            - "91.98.27.40"
