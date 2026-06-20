@@ -41,11 +41,8 @@ spec:
         ports:
           web:
             hostPort: 80
-            redirections:
-              entryPoint:
-                to: websecure
-                scheme: https
-                permanent: true
+            redirectTo:
+              port: websecure
           websecure:
             hostPort: 443
         service:
