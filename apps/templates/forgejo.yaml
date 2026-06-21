@@ -81,6 +81,12 @@ spec:
               ENABLED: true
             quota.default:
               TOTAL: 5G
+            # Reducing memory usage for the git process
+            git.config:
+              core.bigFileThreshold: 50m
+              pack.windowMemory: 256m
+              pack.window: 5
+              pack.threads: 2
           oauth:
           - name: "Nextcloud"
             provider: "nextcloud"
