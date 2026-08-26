@@ -17,4 +17,4 @@ spec:
   source:
     chart: hcloud-cloud-controller-manager
     repoURL: https://charts.hetzner.cloud
-    targetRevision: 1.33.0
+    targetRevision: 1.36.0
